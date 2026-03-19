@@ -1,0 +1,49 @@
+DROP ALL IMAGES INTO THIS FOLDER
+=================================
+The moodboard will auto-detect images by filename.
+No code changes needed — just drop files here and refresh.
+
+LOGOS
+-----
+chaps-logo.png          Chaps brand logo (transparent PNG preferred)
+levis-logo.png          Levi's brand logo (transparent PNG preferred)
+
+CHAPS — HERO & MOOD
+--------------------
+chaps-hero-1.jpg        Chaps hero (right side of opening section)
+chaps-mood-1.jpg        Mood grid — tall portrait cell (left)
+chaps-mood-2.jpg        Mood grid — wide landscape cell (top right)
+chaps-mood-3.jpg        Mood grid — square cell (bottom right)
+chaps-mood-4.jpg        Mood grid — extra cell
+
+CHAPS — DATA SECTIONS
+----------------------
+chaps-dress-1.jpg       Dress data section — image slot in 4-col grid
+chaps-dress-2.jpg       Dress data section — image slot in 3-col bottom
+chaps-dresscasual-1.jpg Dress Casual data section — image slot in 3-col grid
+chaps-dresscasual-2.jpg Dress Casual data section — image slot in 3-col bottom
+
+LEVI'S — HERO & MOOD
+---------------------
+levis-hero-1.jpg        Levi's hero (left side of opening section)
+levis-mood-1.jpg        Mood grid — tall cell (left)
+levis-mood-2.jpg        Mood grid — cell
+levis-mood-3.jpg        Mood grid — cell
+levis-mood-4.jpg        Mood grid — cell
+levis-mood-5.jpg        Mood grid — cell
+
+LEVI'S — DATA SECTION
+----------------------
+levis-casual-1.jpg      Casual data section — dark image in 4-col grid
+levis-casual-2.jpg      Casual data section — tall dark cell in 3-col row
+levis-casual-3.jpg      Bottom mood row — left
+levis-casual-4.jpg      Bottom mood row — center
+levis-casual-5.jpg      Bottom mood row — right
+
+TIPS
+----
+- JPG or PNG both work fine
+- Landscape images work best for wide/hero slots
+- Portrait images work best for tall mood cells
+- Recommended size: at least 1200px on the longest side
+- See image-guide.html in the main folder for visual placement reference
