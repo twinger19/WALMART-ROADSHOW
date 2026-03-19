@@ -1,0 +1,1063 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Belt Category Moodboard – Chaps & Levi's Signature</title>
+<style>
+  /* ─── RESET & BASE ─────────────────────────────────────────── */
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'Georgia', serif; background: #0e0e0e; color: #fff; overflow-x: hidden; }
+
+  /* ─── NAV ──────────────────────────────────────────────────── */
+  nav {
+    position: fixed; top: 0; left: 0; width: 100%; z-index: 100;
+    display: flex; justify-content: center; gap: 48px;
+    padding: 18px 40px;
+    background: rgba(10,10,10,0.85);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  nav a {
+    font-family: 'Georgia', serif;
+    letter-spacing: 0.18em; font-size: 11px; text-transform: uppercase;
+    color: rgba(255,255,255,0.6); text-decoration: none;
+    transition: color 0.3s;
+  }
+  nav a:hover { color: #fff; }
+
+  /* ─── SHARED UTILITIES ─────────────────────────────────────── */
+  .section-label {
+    font-size: 10px; letter-spacing: 0.35em; text-transform: uppercase;
+    opacity: 0.5; margin-bottom: 12px;
+  }
+  .divider {
+    width: 48px; height: 1px; background: currentColor; opacity: 0.4;
+    margin: 20px 0;
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     CHAPS SECTION
+  ══════════════════════════════════════════════════════════════ */
+  #chaps {
+    background: #12192b;
+    color: #f0ebe0;
+    padding-top: 80px; /* nav height */
+  }
+
+  /* --- Chaps Hero ---- */
+  .chaps-hero {
+    position: relative;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .chaps-hero-left {
+    background: #0d1421;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: flex-start;
+    padding: 80px 72px;
+    position: relative;
+    z-index: 2;
+  }
+  .chaps-brand-bar {
+    display: flex; align-items: center; gap: 20px; margin-bottom: 48px;
+  }
+  .logo-placeholder {
+    border: 1px solid rgba(201,168,76,0.5);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(201,168,76,0.6);
+    position: relative; overflow: hidden;
+  }
+  .logo-placeholder::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(201,168,76,0.04) 0%, transparent 60%);
+  }
+  .chaps-logo-ph { width: 140px; height: 56px; }
+  .chaps-hero-headline {
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 400;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+    color: #f0ebe0;
+    margin-bottom: 24px;
+  }
+  .chaps-hero-headline em {
+    font-style: italic;
+    color: #c9a84c;
+  }
+  .chaps-hero-sub {
+    font-size: 13px; letter-spacing: 0.12em; line-height: 1.8;
+    color: rgba(240,235,224,0.55);
+    max-width: 380px;
+    text-transform: uppercase;
+  }
+  .chaps-hero-right {
+    position: relative; overflow: hidden;
+  }
+  .img-placeholder {
+    width: 100%; height: 100%;
+    background: #1a2238;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 10px;
+    border-left: 1px solid rgba(201,168,76,0.15);
+  }
+  .img-placeholder-icon {
+    width: 40px; height: 40px; opacity: 0.25;
+  }
+  .img-placeholder-label {
+    font-size: 9px; letter-spacing: 0.25em; text-transform: uppercase;
+    opacity: 0.35; text-align: center; line-height: 1.6;
+  }
+  .img-ph-filename {
+    font-size: 10px; letter-spacing: 0.12em;
+    color: #c9a84c; opacity: 0.7;
+    font-family: 'Courier New', monospace;
+  }
+
+  /* --- Chaps Mood Grid --- */
+  .chaps-mood-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 320px 320px;
+    gap: 3px;
+    background: #0d1421;
+    padding: 3px;
+  }
+  .mood-cell {
+    position: relative; overflow: hidden;
+    background: #1a2238;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 8px;
+    cursor: pointer;
+    transition: transform 0.3s;
+  }
+  .mood-cell:hover { transform: scale(1.01); z-index: 2; }
+  .mood-cell.tall { grid-row: span 2; }
+  .mood-cell.wide { grid-column: span 2; }
+  .mood-cell img {
+    width: 100%; height: 100%; object-fit: cover;
+    display: block;
+    position: absolute; inset: 0;
+  }
+  .mood-cell-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(10,16,30,0.7));
+    padding: 20px 16px 14px;
+  }
+  .mood-cell-filename {
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: rgba(201,168,76,0.8); font-family: 'Courier New', monospace;
+  }
+
+  /* --- Chaps Data Sections --- */
+  .chaps-data-section {
+    padding: 96px 72px;
+    background: #12192b;
+    border-top: 1px solid rgba(201,168,76,0.12);
+  }
+  .chaps-data-section.alt { background: #0d1421; }
+
+  .data-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    margin-bottom: 72px;
+    align-items: end;
+  }
+  .data-title {
+    font-size: clamp(32px, 4vw, 52px);
+    font-weight: 400;
+    line-height: 1.1;
+    letter-spacing: -0.01em;
+  }
+  .data-title span { color: #c9a84c; }
+  .data-intro {
+    font-size: 14px; line-height: 1.85;
+    color: rgba(240,235,224,0.55);
+    letter-spacing: 0.03em;
+  }
+
+  /* Bar Charts */
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    margin-bottom: 72px;
+  }
+  .metric-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.1);
+    padding: 32px 28px;
+    position: relative;
+  }
+  .metric-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 2px;
+    background: linear-gradient(90deg, #c9a84c, transparent);
+  }
+  .metric-label {
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: rgba(201,168,76,0.7); margin-bottom: 16px;
+  }
+  .metric-value {
+    font-size: 48px; font-weight: 400; line-height: 1;
+    color: #f0ebe0; margin-bottom: 6px;
+  }
+  .metric-value sup { font-size: 18px; opacity: 0.6; }
+  .metric-vs {
+    font-size: 11px; letter-spacing: 0.1em;
+    color: rgba(240,235,224,0.4); margin-bottom: 20px;
+  }
+  .metric-bar-track {
+    height: 4px; background: rgba(255,255,255,0.08); position: relative; border-radius: 2px;
+  }
+  .metric-bar-avg {
+    position: absolute; top: -3px; height: 10px; width: 2px;
+    background: rgba(255,255,255,0.25);
+    border-radius: 1px;
+  }
+  .metric-bar-fill {
+    height: 100%; border-radius: 2px;
+    transition: width 1s ease;
+  }
+  .bar-gold { background: linear-gradient(90deg, #c9a84c, #e8c96a); }
+  .bar-red  { background: linear-gradient(90deg, #8b2020, #c43030); }
+  .bar-navy { background: linear-gradient(90deg, #1a4080, #2a5fa8); }
+  .metric-badge {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+  }
+  .badge-up   { background: rgba(201,168,76,0.15); color: #c9a84c; }
+  .badge-down { background: rgba(180,60,60,0.15);  color: #c04040; }
+  .badge-avg  { background: rgba(255,255,255,0.07); color: rgba(255,255,255,0.5); }
+
+  /* Comparison bars - horizontal */
+  .compare-section { margin-bottom: 72px; }
+  .compare-title {
+    font-size: 10px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: rgba(201,168,76,0.6); margin-bottom: 32px;
+  }
+  .compare-row {
+    display: grid;
+    grid-template-columns: 180px 1fr 80px;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.04);
+  }
+  .compare-row-label {
+    font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(240,235,224,0.6);
+    line-height: 1.4;
+  }
+  .compare-bar-wrap {
+    position: relative; height: 36px; display: flex; align-items: center;
+  }
+  .compare-bar-bg {
+    position: absolute; inset: 0;
+    background: rgba(255,255,255,0.04);
+    border-radius: 2px;
+  }
+  .compare-bar-inner {
+    position: absolute; left: 0; top: 8px; bottom: 8px;
+    border-radius: 2px;
+    display: flex; align-items: center; padding-left: 12px;
+  }
+  .compare-bar-inner-text {
+    font-size: 10px; letter-spacing: 0.1em; color: rgba(255,255,255,0.8);
+    white-space: nowrap;
+  }
+  .compare-avg-line {
+    position: absolute; top: 0; bottom: 0; width: 1px;
+    background: rgba(255,255,255,0.2);
+  }
+  .compare-st {
+    font-size: 22px; font-weight: 400; text-align: right;
+    color: #f0ebe0;
+  }
+  .compare-st span { font-size: 11px; opacity: 0.45; }
+
+  /* Pie / Donut stats */
+  .stat-blocks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2px;
+    margin-bottom: 72px;
+  }
+  .stat-block {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(201,168,76,0.08);
+    padding: 40px 28px;
+    display: flex; flex-direction: column; gap: 12px;
+  }
+  .stat-block-num {
+    font-size: 56px; line-height: 1;
+    font-weight: 400; color: #c9a84c;
+  }
+  .stat-block-num sub { font-size: 22px; opacity: 0.7; }
+  .stat-block-label {
+    font-size: 10px; letter-spacing: 0.22em; text-transform: uppercase;
+    color: rgba(240,235,224,0.5); line-height: 1.5;
+  }
+  .stat-block-desc {
+    font-size: 12px; color: rgba(240,235,224,0.4); line-height: 1.6;
+  }
+
+  /* Image + data split row */
+  .split-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3px;
+    margin-bottom: 3px;
+  }
+  .split-row.reverse { direction: rtl; }
+  .split-row.reverse > * { direction: ltr; }
+  .split-img-cell {
+    min-height: 460px;
+    background: #1a2238;
+    position: relative;
+    overflow: hidden;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 10px;
+  }
+  .split-img-cell img {
+    width: 100%; height: 100%; object-fit: cover;
+    position: absolute; inset: 0;
+  }
+  .split-data-cell {
+    background: #0d1421;
+    padding: 64px 56px;
+    display: flex; flex-direction: column; justify-content: center;
+  }
+
+  /* ── Chaps gold accent strip ── */
+  .chaps-accent-strip {
+    height: 3px;
+    background: linear-gradient(90deg, #c9a84c 0%, #e8c96a 50%, #c9a84c 100%);
+  }
+
+  /* ══════════════════════════════════════════════════════════════
+     LEVI'S SECTION — bright white, red & black
+  ══════════════════════════════════════════════════════════════ */
+  #levis {
+    background: #ffffff;
+    color: #1a1a1a;
+  }
+
+  /* --- Levi's Hero --- */
+  .levis-hero {
+    min-height: 100vh;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+  .levis-hero-left {
+    position: relative; overflow: hidden;
+    background: #1a1a1a;
+  }
+  .levis-hero-right {
+    background: #ffffff;
+    display: flex; flex-direction: column;
+    justify-content: center; padding: 80px 72px;
+    position: relative;
+  }
+  .levis-hero-right::before {
+    content: '';
+    position: absolute; top: 0; left: 0; width: 5px; height: 100%;
+    background: #E31837;
+  }
+  .levis-brand-bar {
+    display: flex; align-items: center; gap: 20px; margin-bottom: 48px;
+  }
+  .levis-logo-ph {
+    width: 120px; height: 52px;
+    border: 2px solid #E31837;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: #E31837; font-family: 'Courier New', monospace;
+  }
+  .levis-hero-headline {
+    font-size: clamp(42px, 5vw, 68px);
+    font-weight: 400; line-height: 1.05;
+    color: #1a1a1a; margin-bottom: 24px;
+  }
+  .levis-hero-headline em { font-style: italic; color: #E31837; }
+  .levis-hero-sub {
+    font-size: 13px; letter-spacing: 0.1em; line-height: 1.9;
+    color: rgba(26,26,26,0.5); text-transform: uppercase;
+    max-width: 380px;
+  }
+
+  /* --- Levi's Data Sections --- */
+  .levis-data-section {
+    padding: 96px 72px;
+    background: #ffffff;
+    border-top: 3px solid #E31837;
+  }
+  .levis-data-section.alt { background: #f6f6f6; }
+
+  /* Levi's overrides for shared data components */
+  #levis .data-title { color: #1a1a1a; }
+  #levis .data-title span { color: #E31837; }
+  #levis .data-intro { color: rgba(26,26,26,0.55); }
+  #levis .compare-row { border-bottom: 1px solid rgba(0,0,0,0.07); }
+  #levis .compare-row-label { color: rgba(26,26,26,0.65); }
+  #levis .compare-bar-bg { background: rgba(0,0,0,0.07); }
+  #levis .compare-avg-line { background: rgba(0,0,0,0.3); }
+  #levis .compare-bar-inner-text { color: #fff; }
+  #levis .compare-st { color: #1a1a1a; }
+  #levis .stat-block { background: #fff; border: 1px solid rgba(0,0,0,0.08); }
+  #levis .stat-block-label { color: rgba(26,26,26,0.45); }
+  #levis .stat-block-desc { color: rgba(26,26,26,0.4); }
+  #levis .metric-card { background: #fff; border: 1px solid rgba(0,0,0,0.08); }
+  #levis .metric-card::before { background: linear-gradient(90deg, #E31837, transparent); }
+  #levis .metric-value { color: #1a1a1a; }
+  #levis .metric-vs { color: rgba(26,26,26,0.4); }
+  #levis .metric-bar-track { background: rgba(0,0,0,0.08); }
+  #levis .metric-bar-avg { background: rgba(0,0,0,0.3); }
+  #levis .badge-avg { background: rgba(0,0,0,0.06); color: rgba(26,26,26,0.5); }
+  #levis .split-data-cell { background: #f6f6f6; border: none; border-left: 3px solid #E31837; }
+  #levis .split-img-cell { background: #e0e0e0; }
+  #levis .section-label { color: rgba(26,26,26,0.45); }
+  #levis .divider { background: #E31837; opacity: 0.5; }
+
+  .metric-card.levis { border-color: rgba(0,0,0,0.08); }
+  .metric-card.levis::before { background: linear-gradient(90deg, #E31837, transparent); }
+  .metric-card.levis .metric-label { color: rgba(227,24,55,0.8); }
+  .compare-title.levis { color: rgba(227,24,55,0.8); }
+  .stat-block.levis { border-color: rgba(0,0,0,0.08); }
+  .stat-block.levis .stat-block-num { color: #E31837; }
+  .bar-red-levis { background: linear-gradient(90deg, #E31837, #ff4d6a); }
+  .bar-denim { background: linear-gradient(90deg, #1a3a5c, #2a5fa8); }
+
+  /* Levi's mood grid */
+  .levis-mood-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    grid-template-rows: 360px 360px;
+    gap: 3px;
+    background: #e0e0e0;
+    padding: 3px;
+  }
+  .levis-mood-cell {
+    position: relative; overflow: hidden;
+    background: #d8d8d8;
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    gap: 8px;
+  }
+  .levis-mood-cell.tall { grid-row: span 2; }
+  .levis-mood-cell img {
+    width: 100%; height: 100%; object-fit: cover;
+    position: absolute; inset: 0;
+  }
+  .levis-mood-overlay {
+    position: absolute; bottom: 0; left: 0; right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.55));
+    padding: 20px 16px 14px;
+  }
+  .levis-filename {
+    font-size: 9px; letter-spacing: 0.18em; text-transform: uppercase;
+    color: #E31837; font-family: 'Courier New', monospace;
+  }
+
+  /* ─── EDITORIAL DATA GRID ─────────────────────────────────── */
+  .ed-intro {
+    padding: 72px 72px 56px;
+    display: grid; grid-template-columns: 1fr 1.6fr;
+    gap: 64px; align-items: end;
+  }
+  .ed-grid { display: grid; gap: 3px; }
+  .ed-grid-3 { grid-template-columns: repeat(3, 1fr); }
+  .ed-grid-4 { grid-template-columns: repeat(4, 1fr); }
+  .ed-cell {
+    padding: 52px 48px;
+    min-height: 300px;
+    display: flex; flex-direction: column; justify-content: flex-end;
+    position: relative; overflow: hidden;
+  }
+  .ed-cell.span2 { grid-column: span 2; }
+  .ed-cell.row2  { grid-row: span 2; }
+  .ed-cell.short { min-height: 220px; }
+  .ed-img-cell {
+    min-height: 300px; position: relative; overflow: hidden;
+    background: #1a2238;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; gap: 8px;
+  }
+  .ed-img-cell img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .ed-img-cell.row2  { grid-row: span 2; }
+  .ed-img-cell.span2 { grid-column: span 2; }
+  .ed-img-cell.short { min-height: 220px; }
+  .ed-img-cell.levis { background: #d0d0d0; }
+  /* Chaps cell backgrounds */
+  .chaps-dark  { background: #080e1b; }
+  .chaps-mid   { background: #0d1421; }
+  .chaps-light { background: #12192b; }
+  /* Big editorial number */
+  .ed-num {
+    font-size: clamp(72px, 9vw, 116px);
+    line-height: 0.88; font-weight: 400; letter-spacing: -0.02em;
+  }
+  .ed-num.gold { color: #c9a84c; }
+  .ed-num.red  { color: #E31837; }
+  .ed-num.muted-gold { color: rgba(201,168,76,0.3); }
+  .ed-num.muted-red  { color: rgba(227,24,55,0.28); }
+  .ed-num sub { font-size: 0.3em; opacity: 0.75; vertical-align: 0.1em; }
+  .ed-headline {
+    font-size: 17px; font-weight: 400; line-height: 1.2;
+    color: #f0ebe0; margin-top: 16px;
+  }
+  .ed-headline.dark { color: #1a1a1a; }
+  .ed-subline {
+    font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase;
+    color: rgba(240,235,224,0.32); margin-top: 6px; line-height: 1.65;
+  }
+  .ed-subline.dark { color: rgba(26,26,26,0.38); }
+  .ed-badge {
+    display: inline-block; margin-top: 16px;
+    font-size: 9px; letter-spacing: 0.22em; text-transform: uppercase;
+    padding: 5px 12px; border-radius: 2px; width: fit-content;
+  }
+  .ed-badge.up   { background: rgba(201,168,76,0.15); color: #c9a84c; }
+  .ed-badge.down { background: rgba(180,60,60,0.12);  color: rgba(200,80,80,0.8); }
+  .ed-badge.avg  { background: rgba(255,255,255,0.06); color: rgba(255,255,255,0.38); }
+  .ed-badge.up-red  { background: rgba(227,24,55,0.1); color: #E31837; }
+  .ed-badge.avg-dark { background: rgba(0,0,0,0.07); color: rgba(26,26,26,0.45); }
+  /* Story strip — full-width editorial text moment */
+  .ed-story-strip {
+    padding: 60px 72px;
+    display: flex; align-items: center; gap: 56px;
+  }
+  .ed-story-strip.gold-bg { background: #c9a84c; }
+  .ed-story-strip.red-bg  { background: #E31837; }
+  .ed-story-strip.dark-bg { background: #080e1b; border-top: 1px solid rgba(201,168,76,0.12); }
+  .ed-story-big {
+    font-size: clamp(28px, 3.5vw, 48px); font-weight: 400; line-height: 1.15; flex: 1;
+  }
+  .ed-story-big.on-gold { color: #0d1421; }
+  .ed-story-big.on-red  { color: #ffffff; }
+  .ed-story-big.on-dark { color: #f0ebe0; }
+  .ed-story-big em { font-style: italic; }
+  .ed-story-sub {
+    font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase;
+    line-height: 1.8; max-width: 300px;
+  }
+  .ed-story-sub.on-gold { color: rgba(13,20,33,0.5); }
+  .ed-story-sub.on-red  { color: rgba(255,255,255,0.65); }
+  .ed-story-sub.on-dark { color: rgba(240,235,224,0.4); }
+  /* Levis white cell variants */
+  .levis-white { background: #ffffff; }
+  .levis-off   { background: #f6f6f6; }
+  .levis-gray  { background: #f0f0f0; }
+
+  /* ─── FOOTER ───────────────────────────────────────────────── */
+  footer {
+    background: #050505;
+    padding: 40px 72px;
+    display: flex; justify-content: space-between; align-items: center;
+    border-top: 1px solid rgba(255,255,255,0.06);
+  }
+  footer .foot-left {
+    font-size: 9px; letter-spacing: 0.3em; text-transform: uppercase;
+    color: rgba(255,255,255,0.2);
+  }
+  footer .foot-right {
+    font-size: 9px; letter-spacing: 0.2em; text-transform: uppercase;
+    color: rgba(255,255,255,0.15);
+  }
+
+  /* ─── RESPONSIVE ───────────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .chaps-hero, .levis-hero, .data-header, .split-row,
+    .metric-grid, .stat-blocks, .guide-grid { grid-template-columns: 1fr; }
+    .chaps-hero-left, .levis-hero-right { padding: 60px 32px; }
+    .chaps-data-section, .levis-data-section, footer { padding: 60px 32px; }
+    .chaps-mood-grid { grid-template-columns: 1fr 1fr; grid-template-rows: auto; }
+    .mood-cell.tall, .mood-cell.wide { grid-column: span 1; grid-row: span 1; }
+    .levis-mood-grid { grid-template-columns: 1fr 1fr; }
+    .levis-mood-cell.tall { grid-row: span 1; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#chaps">Chaps</a>
+  <a href="#chaps-dress">Dress</a>
+  <a href="#chaps-dresscasual">Dress Casual</a>
+  <a href="#levis">Levi's Signature</a>
+  <a href="#levis-casual">Casual</a>
+  <a href="image-guide.html">Image Guide ↗</a>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════════════
+     CHAPS SECTION
+═══════════════════════════════════════════════════════════ -->
+<section id="chaps">
+
+  <!-- Hero -->
+  <div class="chaps-hero">
+    <div class="chaps-hero-left">
+      <div class="chaps-brand-bar">
+        <!-- REPLACE: drop chaps-logo.png into your folder -->
+        <div class="logo-placeholder chaps-logo-ph">
+          <span>chaps-logo.png</span>
+        </div>
+      </div>
+      <div class="section-label" style="color:#c9a84c;">Dress &amp; Dress Casual</div>
+      <h1 class="chaps-hero-headline">
+        Classic<br/><em>Americana</em><br/>Refined.
+      </h1>
+      <div class="divider" style="background:#c9a84c;"></div>
+      <p class="chaps-hero-sub">
+        Dress &amp; Dress Casual Belt Performance<br/>
+        Category Intelligence Report
+      </p>
+    </div>
+    <div class="chaps-hero-right">
+      <div class="img-placeholder">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(201,168,76,0.5)" stroke-width="1.2">
+          <rect x="4" y="8" width="32" height="24" rx="2"/>
+          <circle cx="14" cy="18" r="3"/>
+          <path d="M4 28l9-7 7 6 5-4 11 6"/>
+        </svg>
+        <div class="img-placeholder-label">Hero Mood Image<br/>Full Bleed</div>
+        <div class="img-ph-filename">chaps-hero-1.jpg</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Chaps Gold Accent -->
+  <div class="chaps-accent-strip"></div>
+
+  <!-- Mood Grid – Chaps -->
+  <div class="chaps-mood-grid">
+    <!-- Cell 1: tall left -->
+    <div class="mood-cell tall">
+      <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+      <div class="img-placeholder-label">Portrait Mood</div>
+      <div class="img-ph-filename">chaps-mood-1.jpg</div>
+      <div class="mood-cell-overlay">
+        <div class="mood-cell-filename">chaps-mood-1.jpg</div>
+      </div>
+    </div>
+    <!-- Cell 2 -->
+    <div class="mood-cell">
+      <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+      <div class="img-placeholder-label">Detail / Texture</div>
+      <div class="img-ph-filename">chaps-mood-2.jpg</div>
+      <div class="mood-cell-overlay"><div class="mood-cell-filename">chaps-mood-2.jpg</div></div>
+    </div>
+    <!-- Cell 3 -->
+    <div class="mood-cell">
+      <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+      <div class="img-placeholder-label">Lifestyle / Setting</div>
+      <div class="img-ph-filename">chaps-mood-3.jpg</div>
+      <div class="mood-cell-overlay"><div class="mood-cell-filename">chaps-mood-3.jpg</div></div>
+    </div>
+    <!-- Cell 4: wide bottom right -->
+    <div class="mood-cell wide">
+      <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+      <div class="img-placeholder-label">Wide Lifestyle Shot</div>
+      <div class="img-ph-filename">chaps-mood-4.jpg</div>
+      <div class="mood-cell-overlay"><div class="mood-cell-filename">chaps-mood-4.jpg</div></div>
+    </div>
+  </div>
+
+  <!-- ─── DRESS DATA ────────────────────────────────────────── -->
+  <div class="chaps-data-section" id="chaps-dress" style="padding:0;border-top:none;">
+
+    <!-- Section intro -->
+    <div class="ed-intro">
+      <div>
+        <div class="section-label" style="color:#c9a84c;">Dress Belts</div>
+        <h2 class="data-title">The<br/><span>Tech Story</span></h2>
+      </div>
+      <div class="data-intro">
+        Compression and Track Lock are <strong style="color:#f0ebe0;">outrunning the 4.6% category average every week</strong>. The tech features are the story. Darker hardware finishes lead while gold tone falls behind.
+      </div>
+    </div>
+
+    <!-- Gold story strip -->
+    <div class="ed-story-strip gold-bg">
+      <div class="ed-story-big on-gold"><em>Compression. Track Lock.</em><br/>The tech outrunning the category.</div>
+      <div class="ed-story-sub on-gold">Both features beat the 4.6% ST average every week — Compression at 5.8%, Track Lock at 5.4%. Small share, outsized performance.</div>
+    </div>
+
+    <!-- Main editorial grid: 4 col -->
+    <div class="ed-grid ed-grid-4" style="margin-top:3px;">
+
+      <!-- Compression -->
+      <div class="ed-cell chaps-dark">
+        <div class="ed-num gold">5.8<sub>%</sub></div>
+        <div class="ed-headline">Compression<br/>Sets the Pace</div>
+        <div class="ed-subline">ST · vs. 4.6% avg · Key: 11DK010058-001</div>
+        <div class="ed-badge up">↑ Best in Class</div>
+      </div>
+
+      <!-- Image -->
+      <div class="ed-img-cell">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+        <div class="img-placeholder-label">Dress Mood — Portrait</div>
+        <div class="img-ph-filename">chaps-dress-1.jpg</div>
+      </div>
+
+      <!-- Track Lock -->
+      <div class="ed-cell chaps-mid">
+        <div class="ed-num gold">5.4<sub>%</sub></div>
+        <div class="ed-headline">Track Lock<br/>Follows Strong</div>
+        <div class="ed-subline">ST · vs. 4.6% avg · Key: 11DK010057-001</div>
+        <div class="ed-badge up">↑ Outperforming</div>
+      </div>
+
+      <!-- Darker Hardware -->
+      <div class="ed-cell chaps-dark">
+        <div class="ed-num gold">5.4<sub>%</sub></div>
+        <div class="ed-headline">Darker Hardware<br/>Wins the Finish</div>
+        <div class="ed-subline">Gunmetal &amp; dark finishes lead · vs. 4.6% avg</div>
+        <div class="ed-badge up">↑ Overperforming</div>
+      </div>
+
+    </div>
+
+    <!-- Bottom row: stat + image + underperformer -->
+    <div class="ed-grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:3px;">
+
+      <div class="ed-cell chaps-mid">
+        <div class="ed-num gold">4.9<sub>%</sub></div>
+        <div class="ed-headline">35mm Width<br/>Holds Its Own</div>
+        <div class="ed-subline">Standard width · vs. 4.6% avg · Dominant construction</div>
+        <div class="ed-badge up">↑ Outperforming</div>
+      </div>
+
+      <div class="ed-img-cell">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+        <div class="img-placeholder-label">Hardware / Detail</div>
+        <div class="img-ph-filename">chaps-dress-2.jpg</div>
+      </div>
+
+      <div class="ed-cell chaps-dark">
+        <div class="ed-num muted-gold">3.5<sub>%</sub></div>
+        <div class="ed-headline">Gold Tone<br/>Trails the Field</div>
+        <div class="ed-subline">ST · vs. 4.6% avg · Opportunity to reduce or exit</div>
+        <div class="ed-badge down">↓ Underperforming</div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="chaps-accent-strip"></div>
+
+  <!-- ─── DRESS CASUAL DATA ─────────────────────────────────── -->
+  <div class="chaps-data-section alt" id="chaps-dresscasual" style="padding:0;border-top:none;">
+
+    <!-- Section intro -->
+    <div class="ed-intro" style="background:#0d1421;">
+      <div>
+        <div class="section-label" style="color:#c9a84c;">Dress Casual</div>
+        <h2 class="data-title">Tech &amp;<br/><span>Construction Win</span></h2>
+      </div>
+      <div class="data-intro">
+        Track Lock is the standout — <strong style="color:#f0ebe0;">outrunning the 3.8% category average</strong> at 5.5% ST. Manmade and fabric constructions own 87% of the business. The opportunity is in tech features and construction, not color variety.
+      </div>
+    </div>
+
+    <!-- Editorial grid: 3 col — Track Lock + image + Construction share -->
+    <div class="ed-grid ed-grid-3" style="margin-top:3px;">
+
+      <div class="ed-cell chaps-dark">
+        <div class="ed-num gold">5.5<sub>%</sub></div>
+        <div class="ed-headline">Track Lock<br/>Leads the Category</div>
+        <div class="ed-subline">ST · vs. 3.8% avg · Top-performing tech feature</div>
+        <div class="ed-badge up">↑ Category Leader</div>
+      </div>
+
+      <div class="ed-img-cell">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+        <div class="img-placeholder-label">Dress Casual Mood</div>
+        <div class="img-ph-filename">chaps-dresscasual-1.jpg</div>
+      </div>
+
+      <div class="ed-cell chaps-mid">
+        <div class="ed-num gold">87<sub>%</sub></div>
+        <div class="ed-headline">Manmade + Fabric<br/>Run the Business</div>
+        <div class="ed-subline">Share of total dress casual sales · both constructions outperform</div>
+        <div class="ed-badge up">↑ Construction Wins</div>
+      </div>
+
+    </div>
+
+    <!-- Dark story strip -->
+    <div class="ed-story-strip dark-bg" style="margin-top:3px;">
+      <div class="ed-story-big on-dark">Tech features &amp; construction<br/><em>are the direction.</em></div>
+      <div class="ed-story-sub on-dark">Track Lock at 5.5% ST. Manmade and fabric at 87% of sales. The business rewards construction quality and technology over color variety.</div>
+    </div>
+
+    <!-- Bottom row: reversible + image + tan callout -->
+    <div class="ed-grid" style="grid-template-columns:1fr 1fr 1fr;margin-top:3px;">
+
+      <div class="ed-cell chaps-light">
+        <div class="ed-num gold">4.3<sub>%</sub></div>
+        <div class="ed-headline">Dress Occasion<br/>Outperforms</div>
+        <div class="ed-subline">ST · vs. 3.8% avg · Reversible styles add lift</div>
+        <div class="ed-badge up">↑ Above Average</div>
+      </div>
+
+      <div class="ed-img-cell">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(201,168,76,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+        <div class="img-placeholder-label">Lifestyle / Styling</div>
+        <div class="img-ph-filename">chaps-dresscasual-2.jpg</div>
+      </div>
+
+      <div class="ed-cell chaps-dark">
+        <div class="ed-num muted-gold">2.5<sub>%</sub></div>
+        <div class="ed-headline">Tan Lags<br/>Behind</div>
+        <div class="ed-subline">ST · vs. 3.8% avg · Reconsider depth</div>
+        <div class="ed-badge down">↓ Underperforming</div>
+      </div>
+
+    </div>
+
+  </div><!-- /chaps-data-section dress casual -->
+
+</section><!-- /chaps -->
+
+<!-- ═══════════════════════════════════════════════════════════
+     LEVI'S SIGNATURE SECTION
+═══════════════════════════════════════════════════════════ -->
+<section id="levis">
+
+  <!-- Levi's Hero -->
+  <div class="levis-hero">
+    <div class="levis-hero-left">
+      <div class="img-placeholder" style="background:#1a1a1a;">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.5)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+        <div class="img-placeholder-label" style="color:rgba(255,255,255,0.35);">Hero Denim / Workwear Mood</div>
+        <div class="img-ph-filename" style="color:#E31837;">levis-hero-1.jpg</div>
+      </div>
+    </div>
+    <div class="levis-hero-right">
+      <div class="levis-brand-bar">
+        <div class="levis-logo-ph">levis-logo.png</div>
+      </div>
+      <div class="section-label" style="color:#E31837;">Casual &amp; Workwear Heritage</div>
+      <h2 class="levis-hero-headline">
+        Made for<br/><em>Every Day.</em><br/>Built to Last.
+      </h2>
+      <div class="divider" style="background:#E31837;"></div>
+      <p class="levis-hero-sub">
+        Casual Belt Performance<br/>
+        Levi's Signature — Category Intelligence
+      </p>
+    </div>
+  </div>
+
+  <!-- Red rule -->
+  <div style="height:5px;background:#E31837;"></div>
+
+  <!-- Levi's Mood Grid -->
+  <div class="levis-mood-grid" id="levis-casual">
+    <!-- Tall left -->
+    <div class="levis-mood-cell tall">
+      <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+      <div class="img-placeholder-label" style="color:rgba(26,26,26,0.4);">Portrait / Heritage</div>
+      <div class="img-ph-filename" style="color:rgba(227,24,55,0.7);">levis-mood-1.jpg</div>
+      <div class="levis-mood-overlay">
+        <div class="levis-filename">levis-mood-1.jpg</div>
+      </div>
+    </div>
+    <div class="levis-mood-cell">
+      <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+      <div class="img-placeholder-label" style="color:rgba(26,26,26,0.4);">Denim Detail</div>
+      <div class="img-ph-filename" style="color:rgba(227,24,55,0.7);">levis-mood-2.jpg</div>
+      <div class="levis-mood-overlay"><div class="levis-filename">levis-mood-2.jpg</div></div>
+    </div>
+    <div class="levis-mood-cell">
+      <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+      <div class="img-placeholder-label" style="color:rgba(26,26,26,0.4);">Workwear Setting</div>
+      <div class="img-ph-filename" style="color:rgba(227,24,55,0.7);">levis-mood-3.jpg</div>
+      <div class="levis-mood-overlay"><div class="levis-filename">levis-mood-3.jpg</div></div>
+    </div>
+    <div class="levis-mood-cell">
+      <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+      <div class="img-placeholder-label" style="color:rgba(26,26,26,0.4);">Outdoor / Casual</div>
+      <div class="img-ph-filename" style="color:rgba(227,24,55,0.7);">levis-mood-4.jpg</div>
+      <div class="levis-mood-overlay"><div class="levis-filename">levis-mood-4.jpg</div></div>
+    </div>
+    <div class="levis-mood-cell">
+      <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+      <div class="img-placeholder-label" style="color:rgba(26,26,26,0.4);">True Jean / Product</div>
+      <div class="img-ph-filename" style="color:rgba(227,24,55,0.7);">levis-mood-5.jpg</div>
+      <div class="levis-mood-overlay"><div class="levis-filename">levis-mood-5.jpg</div></div>
+    </div>
+  </div>
+
+  <!-- Levi's Data: Casual -->
+  <div class="levis-data-section" style="padding:0;border-top:none;">
+
+    <!-- Red story strip at top -->
+    <div class="ed-story-strip red-bg">
+      <div class="ed-story-big on-red"><em>Fully adjustable</em> leads all.<br/>Brown &amp; tan leather is the color story.</div>
+      <div class="ed-story-sub on-red">Fully adjustable at 5.0% ST. Brown + tan outperform at 4.7% ST. Black hardware leads hardware at 4.8% ST. All vs. 4.3% average.</div>
+    </div>
+
+    <!-- Editorial grid row 1: 4 col -->
+    <div class="ed-grid ed-grid-4" style="margin-top:3px;">
+
+      <div class="ed-cell levis-white">
+        <div class="ed-num red">5.0<sub>%</sub></div>
+        <div class="ed-headline dark">Fully Adjustable<br/>Leads All</div>
+        <div class="ed-subline dark">ST · vs. 4.3% avg · Key: 11LV1269-200</div>
+        <div class="ed-badge up-red">↑ Top Construction</div>
+      </div>
+
+      <div class="ed-img-cell levis" style="background:#1a1a1a;">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.5)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+        <div class="img-placeholder-label" style="color:rgba(255,255,255,0.35);">Casual / Denim Mood</div>
+        <div class="img-ph-filename" style="color:#E31837;">levis-casual-1.jpg</div>
+      </div>
+
+      <div class="ed-cell levis-off">
+        <div class="ed-num red">4.8<sub>%</sub></div>
+        <div class="ed-headline dark">Black Hardware<br/>Wins the Buckle</div>
+        <div class="ed-subline dark">ST · vs. 4.3% avg · 11LV120069-001, 11LV020155-001</div>
+        <div class="ed-badge up-red">↑ Outperforming</div>
+      </div>
+
+      <div class="ed-cell levis-white">
+        <div class="ed-num red">4.7<sub>%</sub></div>
+        <div class="ed-headline dark">Brown + Tan<br/>Color Leads</div>
+        <div class="ed-subline dark">ST · vs. 4.3% avg · Leather non-stretch in natural tones</div>
+        <div class="ed-badge up-red">↑ Outperforming</div>
+      </div>
+
+    </div>
+
+    <!-- Row 2: image tall left + two stats -->
+    <div class="ed-grid ed-grid-3" style="margin-top:3px;">
+
+      <div class="ed-img-cell row2 levis" style="background:#1c1c1c;">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.5)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+        <div class="img-placeholder-label" style="color:rgba(255,255,255,0.3);">Heritage Portrait</div>
+        <div class="img-ph-filename" style="color:#E31837;">levis-casual-2.jpg</div>
+      </div>
+
+      <div class="ed-cell levis-off">
+        <div class="ed-num red">4.9<sub>%</sub></div>
+        <div class="ed-headline dark">One Style<br/>Leads the Pack</div>
+        <div class="ed-subline dark">11CO02A9-200 · Brown leather · Best single style</div>
+        <div class="ed-badge up-red">↑ Top Performer</div>
+      </div>
+
+      <div class="ed-cell levis-white">
+        <div class="ed-num red">86<sub>%</sub></div>
+        <div class="ed-headline dark">Wider Widths<br/>Own the Floor</div>
+        <div class="ed-subline dark">38mm leads the assortment · Wide widths at 4.6% ST outpace the category</div>
+        <div class="ed-badge avg-dark">→ Lead with 38mm</div>
+      </div>
+
+
+      <div class="ed-cell levis-off">
+        <div style="font-size:13px;line-height:1.9;color:rgba(26,26,26,0.5);letter-spacing:0.03em;">
+          Non-reversible outperforms at <strong style="color:#1a1a1a;">4.4% ST</strong> vs. 4.2% average. Wide belts at 38mm+ make up <strong style="color:#1a1a1a;">78% of total unit sales</strong>. The buyer direction is clear: lean leather, lean wide, lean into adjustability.
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Bottom mood image row -->
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:3px;margin-top:3px;">
+      <div class="levis-mood-cell" style="min-height:300px;">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+        <div class="img-placeholder-label" style="color:rgba(26,26,26,0.38);">Product / Belt Detail</div>
+        <div class="img-ph-filename" style="color:#E31837;">levis-casual-3.jpg</div>
+        <div class="levis-mood-overlay"><div class="levis-filename">levis-casual-3.jpg</div></div>
+      </div>
+      <div class="levis-mood-cell" style="min-height:300px;">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+        <div class="img-placeholder-label" style="color:rgba(26,26,26,0.38);">Everyday Lifestyle</div>
+        <div class="img-ph-filename" style="color:#E31837;">levis-casual-4.jpg</div>
+        <div class="levis-mood-overlay"><div class="levis-filename">levis-casual-4.jpg</div></div>
+      </div>
+      <div class="levis-mood-cell" style="min-height:300px;">
+        <svg class="img-placeholder-icon" viewBox="0 0 40 40" fill="none" stroke="rgba(227,24,55,0.4)" stroke-width="1.2"><rect x="4" y="8" width="32" height="24" rx="2"/><circle cx="14" cy="18" r="3"/><path d="M4 28l9-7 7 6 5-4 11 6"/></svg>
+        <div class="img-placeholder-label" style="color:rgba(26,26,26,0.38);">Heritage / Archive</div>
+        <div class="img-ph-filename" style="color:#E31837;">levis-casual-5.jpg</div>
+        <div class="levis-mood-overlay"><div class="levis-filename">levis-casual-5.jpg</div></div>
+      </div>
+    </div>
+
+  </div><!-- /levis data section -->
+
+</section><!-- /levis -->
+
+<!-- FOOTER -->
+<footer style="background:#ffffff;border-top:1px solid rgba(0,0,0,0.08);">
+  <div class="foot-left" style="color:rgba(26,26,26,0.3);">Walmart Roadshow · Belt Category Intelligence · 2026</div>
+  <a href="image-guide.html" style="font-size:9px;letter-spacing:0.25em;text-transform:uppercase;color:rgba(26,26,26,0.3);text-decoration:none;border:1px solid rgba(0,0,0,0.1);padding:8px 16px;">Image Naming Guide ↗</a>
+</footer>
+
+<script>
+// Auto-detect images and remove placeholder overlays when images load
+document.addEventListener('DOMContentLoaded', () => {
+
+  // Mood / hero image slots
+  document.querySelectorAll('.img-placeholder, .mood-cell, .levis-mood-cell, .split-img-cell, .chaps-hero-right, .levis-hero-left').forEach(cell => {
+    const fn = cell.querySelector('.img-ph-filename, .mood-cell-filename, .levis-filename');
+    if (!fn) return;
+    const filename = fn.textContent.trim();
+    const img = new Image();
+    img.onload = () => {
+      img.style.cssText = 'position:absolute;inset:0;width:100%;height:100%;object-fit:cover;';
+      cell.querySelectorAll('.img-placeholder-icon, .img-placeholder-label, .img-ph-filename').forEach(el => el.style.display = 'none');
+      cell.style.position = 'relative';
+      cell.insertBefore(img, cell.firstChild);
+    };
+    img.src = 'images/' + filename;
+  });
+
+  // Logo slots — Chaps
+  const chapsLogoPh = document.querySelector('.chaps-logo-ph');
+  if (chapsLogoPh) {
+    const logoImg = new Image();
+    logoImg.onload = () => {
+      logoImg.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;';
+      chapsLogoPh.innerHTML = '';
+      chapsLogoPh.appendChild(logoImg);
+      chapsLogoPh.style.border = 'none';
+      chapsLogoPh.style.background = 'none';
+    };
+    logoImg.src = 'images/chaps-logo.png';
+  }
+
+  // Logo slots — Levi's
+  const levisLogoPh = document.querySelector('.levis-logo-ph');
+  if (levisLogoPh) {
+    const logoImg = new Image();
+    logoImg.onload = () => {
+      logoImg.style.cssText = 'max-width:100%;max-height:100%;object-fit:contain;';
+      levisLogoPh.innerHTML = '';
+      levisLogoPh.appendChild(logoImg);
+      levisLogoPh.style.border = 'none';
+      levisLogoPh.style.background = 'none';
+    };
+    logoImg.src = 'images/levis-logo.png';
+  }
+
+});
+</script>
+
+</body>
+</html>
